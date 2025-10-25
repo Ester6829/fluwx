@@ -45,12 +45,8 @@
     });
   }
 
-  @override
-  void dispose() {
-    _cancelable?.cancel();
-    super.dispose();
-  }
 
+  //领取商户转账
   void _startBusinessTransfer() {
     fluwx.openBusinessView(
         businessType: FluwxBusinessScene.requestMerchantTransfer,
@@ -59,6 +55,13 @@
           "mchId": "xxx",
           "package":"xxxx",
         }).query);
+  }
+
+
+  @override
+  void dispose() {
+    _cancelable?.cancel();
+    super.dispose();
   }
 
 ```
