@@ -4,10 +4,7 @@ import 'package:fluwx/src/method_channel/fluwx_method_channel.dart';
 import 'package:fluwx/src/method_channel/fluwx_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockFluwxPlatform
-    with MockPlatformInterfaceMixin
-    implements FluwxPlatform {
-
+class MockFluwxPlatform with MockPlatformInterfaceMixin implements FluwxPlatform {
   @override
   Future<String?> getExtMsg() {
     // TODO: implement getExtMsg
@@ -29,9 +26,7 @@ class MockFluwxPlatform
 
   @override
   Future<bool> sendAuth(
-      {required String scope,
-      String state = 'state',
-      bool nonAutomatic = false}) {
+      {required String scope, String state = 'state', bool nonAutomatic = false}) {
     // TODO: implement sendAuth
     throw UnimplementedError();
   }
@@ -69,7 +64,13 @@ class MockFluwxPlatform
   }
 
   @override
-  Future<bool> authByQRCode({required String appId, required String scope, required String nonceStr, required String timestamp, required String signature, String? schemeData}) {
+  Future<bool> authByQRCode(
+      {required String appId,
+      required String scope,
+      required String nonceStr,
+      required String timestamp,
+      required String signature,
+      String? schemeData}) {
     // TODO: implement authByQRCode
     throw UnimplementedError();
   }
@@ -102,6 +103,12 @@ class MockFluwxPlatform
     throw UnimplementedError();
   }
 
+  @override
+  Future<bool> openBusinessView(
+      {required FluwxBusinessScene businessType, required String query}) {
+    // TODO: implement openBusinessView
+    throw UnimplementedError();
+  }
 }
 
 void main() {
